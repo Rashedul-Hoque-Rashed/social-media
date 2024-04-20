@@ -1,5 +1,5 @@
 import { VStack, Box, Flex, Text, Avatar, Link, Menu, MenuButton, Portal, MenuList, MenuItem } from "@chakra-ui/react"
-import {useToast} from "@chakra-ui/toast"
+import { useToast } from "@chakra-ui/toast"
 import { BsInstagram } from "react-icons/bs";
 import { CgMoreO } from "react-icons/cg";
 
@@ -63,6 +63,14 @@ const UserHeader = () => {
                             </Portal>
                         </Menu>
                     </Box>
+                </Flex>
+            </Flex>
+            <Flex w={'full'}>
+                <Flex flex={1} borderBottom={'1.5px solid white'} justifyContent={'center'} pb={3} cursor={'pointer'}>
+                    <Text fontWeight={'bold'}>Threads</Text>
+                </Flex>
+                <Flex flex={1} borderBottom={'1px solid gray'} justifyContent={'center'} color={'gray.light'} pb={3} cursor={'pointer'}>
+                    <Text fontWeight={'bold'}>Replies</Text>
                 </Flex>
             </Flex>
         </VStack>
