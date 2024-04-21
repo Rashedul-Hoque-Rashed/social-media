@@ -5,8 +5,12 @@ import { Box } from '@chakra-ui/react';
 import { Text } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
 import { BsThreeDots } from 'react-icons/bs';
+import Actions from './Actions';
+import { useState } from 'react';
 
-const UserPost = () => {
+// eslint-disable-next-line react/prop-types
+const UserPost = ({likes, replies, postImg, postTitle}) => {
+    const [liked, setLiked] = useState(false);
     return (
         <Link to="/mark/post/1">
             <Flex gap={3} mb={4} py={5}>
@@ -57,10 +61,23 @@ const UserPost = () => {
                         </Flex>
                     </Flex>
 
-                    <Text fontSize={'sm'}>This is my first post.</Text>
-<Box borderRadius={6} overflow={'hidden'} border={'1px solid'} borderColor={'gray.light'}> 
-<Image src='/public/post1.png' w={'full'} />
-</Box>
+                    <Text fontSize={'sm'}>{postTitle}</Text>
+                    { postImg &&
+                        <Box borderRadius={6} overflow={'hidden'} border={'1px solid'} borderColor={'gray.light'}>
+                        <Image src={postImg} w={'full'} />
+                    </Box>}
+                    <Flex gap={3} my={1}>
+                        <Actions liked={liked} setLiked={setLiked} />
+                    </Flex>
+                    <Flex gap={3} alignItems={'center'}>
+                        <Text color={'gray.light'} fontSize={'sm'}>
+                            {replies} replies
+                        </Text>
+                        <Box w={0.5} h={0.5} borderRadius={'full'} bg={'gray.light'}></Box>
+                        <Text color={'gray.light'} fontSize={'sm'}>
+                            {likes} likes
+                        </Text>
+                    </Flex>
                 </Flex>
             </Flex>
         </Link>
