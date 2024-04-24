@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Avatar, Divider, Flex, Text } from "@chakra-ui/react";
 
-
 const Comment = ({ reply, lastReply }) => {
 	return (
 		<>

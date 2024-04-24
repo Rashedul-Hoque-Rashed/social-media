@@ -1,5 +1,7 @@
 import { Avatar, Box, Button, Divider, Flex, Image, Spinner, Text } from "@chakra-ui/react";
+import Actions from "../Components/Actions";
 import { useEffect } from "react";
+import Comment from "../Components/Comment";
 import useGetUserProfile from "../hooks/useGetUserProfile";
 import useShowToast from "../hooks/useShowToast";
 import { useNavigate, useParams } from "react-router-dom";
@@ -8,8 +10,6 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { DeleteIcon } from "@chakra-ui/icons";
 import postsAtom from "../atoms/postsAtom";
-import Actions from "../Components/Actions";
-import Comment from "../Components/Comment";
 
 const PostPage = () => {
 	const { user, loading } = useGetUserProfile();
